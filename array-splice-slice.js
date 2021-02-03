@@ -6,3 +6,9 @@ console.log(numbers);
 const removed = numbers.splice(2,5,33,44,55,66,77)
 console.log(removed);
 console.log(numbers);
+
+console.log(typeof removed);
+
+const newArray = removed.join(" ")
+console.log(newArray);
+console.log(typeof removed);
