@@ -14,3 +14,16 @@ console.log(allName);
 //2nd way
 const names = person.map( x => x.name)
 console.log(names);
+
+//2nd Way
+{
+    const ids = person.map( x => x.id);
+    console.log(ids);
+}
+
+//3rd Way
+{
+    const result = person.filter(x => x.id < 20 )
+    console.log(result);
+}
+
