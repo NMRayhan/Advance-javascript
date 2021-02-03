@@ -36,3 +36,9 @@ console.log(evenNumber);
     let result = newNumber.filter(x => x > 20)
     console.log(result);
 }
+
+//find
+{
+    let result = newNumber.find(x => x > 20)
+    console.log(result);
+}
