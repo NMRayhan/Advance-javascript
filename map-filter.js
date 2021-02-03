@@ -1,4 +1,4 @@
-const number = [2, 3, 4, 5, 6]
+const number = [4, 5, 6, 8, 4, 9]
 
 //1st Way
 const newNumber = []
@@ -20,7 +20,19 @@ const doubleNum = number.map(function (x) {
 console.log(doubleNum);
 
 //3rd Way
-const result2 = number.map( x => x * x)
+const result2 = number.map(Element => Element * Element)
 console.log(result2);
 
+//filter
+const bestNum = number.filter(Element => Element > 5)
+console.log(bestNum);
 
+// filter
+const evenNumber = newNumber.filter(Element => Element % 2 == 0)
+console.log(evenNumber);
+
+//filter 
+{
+    let result = newNumber.filter(x => x > 20)
+    console.log(result);
+}
