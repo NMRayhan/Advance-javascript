@@ -1,63 +1,71 @@
 const student = {
-    id : null,
-    name : null,
-    lastName : null,
-    totalCourse : null,
-    cgpa : null,
-    versityName : null,
-    getCourse : function(course){
+    id: null,
+    fullNameArray: [
+        firstName = null,
+        lastName = null
+    ],
+    totalCourse: null,
+    cgpa: null,
+    versityName: null,
+    getCourse: function (course) {
         this.totalCourse = this.totalCourse - course
         return `total Completed Course : ${this.totalCourse}`;
     },
-    getFullName : function(){
-        return `Student Name : ${this.name} ${this.lastName}`;
-    },
-    getCgpa : function(){
+    getCgpa: function (finalcgpa) {
+        this.cgpa =  finalcgpa;
         return `CGPA : ${this.cgpa}`;
     },
-    getWelcomeMsg : function(fName,lName){
-        return `Hello ${fName} ${lName} welcome to ${this.versityName}`;
+    getWelcomeMsg: function (...fullName) {
+        return `Hello ${fullName[0]} ${fullName[1]} welcome to ${this.versityName}`;
+    },
+    getFullName: function (...fullName) {
+        return `Student Name : ${fullName[0]} ${fullName[1]}`;
     }
 }
 
 const friendTamim = {
-    name : "Ragvi Ahmed",
-    lastName : "Tamim",
-    totalCourse : 40,
-    cgpa : 3.9,
-    versityName : "Daffodil International University"
+    fullNameArray: [
+        firstName = "Ragvi Ahmed",
+        lastName = "Tamim",
+    ],
+    totalCourse: 40,
+    cgpa: 3.9,
+    versityName: "Daffodil International University"
 }
 
 const friendChandan = {
-    name : "Chandan",
-    lastName : "Ojha",
-    totalCourse : 50,
-    cgpa : 4.0,
-    versityName : "American International University of Bangladesh"
+    fullNameArray: [
+        ffirstName = "Chandan",
+        lastName = "Ojha"
+    ],
+    totalCourse: 50,
+    cgpa: 4.0,
+    versityName: "American International University of Bangladesh"
 }
 
 //for Tamim
-const tamimName = student.getFullName.bind(friendTamim);
-console.log(tamimName());
+//apply()
+const tamimFullName = student.getFullName.apply(friendTamim, friendTamim.fullNameArray);
+console.log(tamimFullName);
+const tamimWelcom = student.getWelcomeMsg.apply(friendTamim, friendTamim.fullNameArray)
+console.log(tamimWelcom);
+//bind()
+const courseTamim = student.getCourse.bind(friendTamim);
+console.log(courseTamim(5));
+//call()
+const cgpaTamim = student.getCgpa.call(friendTamim, friendTamim.cgpa);
+console.log(cgpaTamim);
 
-const tamimCourse = student.getCourse.bind(friendTamim);
-console.log(tamimCourse(5));
 
-const tamimCgpa = student.getCgpa.bind(friendTamim);
-console.log(tamimCgpa());
-//for Tamim call() function
-const welcomeMsgforTamim = student.getWelcomeMsg.call(friendTamim, friendTamim.name,friendTamim.lastName)
-console.log(welcomeMsgforTamim);
-
-//Chadan
-const chandanName = student.getFullName.bind(friendChandan);
-console.log(chandanName());
-
-const chandanCourse = student.getCourse.bind(friendChandan);
-console.log(chandanCourse(10));
-
-const chandanCgpa = student.getCgpa.bind(friendChandan);
-console.log(chandanCgpa());
-
-const welcomeMsgforChandan = student.getWelcomeMsg.call(friendChandan, friendChandan.name,friendChandan.lastName)
-console.log(welcomeMsgforChandan);
+//for Chandan
+//apply()
+const chandanFullName = student.getFullName.apply(friendChandan, friendChandan.fullNameArray);
+console.log(chandanFullName);
+const chandanWelcom = student.getWelcomeMsg.apply(friendChandan, friendChandan.fullNameArray)
+console.log(chandanWelcom);
+//bind()
+const courseChandan = student.getCourse.bind(friendChandan);
+console.log(courseChandan(5));
+//call()
+const cgpaChandan = student.getCgpa.call(friendChandan, friendChandan.cgpa);
+console.log(cgpaChandan);
