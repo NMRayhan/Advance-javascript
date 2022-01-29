@@ -1,10 +1,17 @@
-function employee(name, jobTitle, born) {
-    this.name = name;
-    this.jobTitle = jobTitle;
-    this.born = born;
+function isLeapYear(year) {
+    if (year % 4 == 0) {
+        if (year % 100 == 0) {
+            if (year % 400 == 0) {
+                console.log(year + " is leap year");
+            } else {
+                console.log(year + " is not a leap year");
+            }
+        } else {
+            console.log(year + " is leap year");
+        }
+    } else {
+        console.log(year + " is not a leap year");
+    }
 }
-employee.prototype.salary = 20000;
 
-const fred = new employee('fred flinstone', 'caveman', 1970);
-
-console.log(fred);
+isLeapYear(2300);
