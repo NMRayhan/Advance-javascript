@@ -43,16 +43,23 @@ isLeapYear(2300);
 // console.log(factorialFind(5));
 
 function pizzaPanda(foodName, quantity) {
-    if (foodName.toLowerCase() == "pizza") {
-        var price = 10;
-        let total = price * quantity;
-        var message = "Your Order, " + quantity + " " + foodName.toLowerCase() + " and total you pay $" + total;
-        return message;
-    } else {
-        return "You have choice wrong food, please select only pizza";
+    if(foodName.toLowerCase() == 'pizza'){
+        let pizzaPrice = 20;
+        let total = pizzaPrice * quantity;
+        var massage = "Order confirm, "+quantity+" "+foodName+" total $"+total;
+        return massage;
+    }
+    else if(foodName.toLowerCase() == 'burger'){
+        let burgerPrice = 15;
+        let total = burgerPrice * quantity;
+        var massage = "Order confirm, "+quantity+" "+foodName+" total $"+total;
+        return massage;
+    }
+    else{
+        return "Sorry, we sell only pizza and burger"
     }
 
 }
 
 
-console.log(pizzaPanda("PIzza", 5));
+console.log(pizzaPanda("pizza", 3));
