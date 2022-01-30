@@ -1,3 +1,4 @@
+/*
 function isLeapYear(year) {
     if (year % 4 == 0) {
         if (year % 100 == 0) {
@@ -15,3 +16,15 @@ function isLeapYear(year) {
 }
 
 isLeapYear(2300);
+*/
+
+
+function factorialFinder(number) {
+    var factorial = 1
+    for (let i = number; i >= 1; i--) {
+        factorial = factorial * i;
+    }
+    return factorial;
+}
+
+console.log(factorialFinder(6));
