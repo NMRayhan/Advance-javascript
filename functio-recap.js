@@ -1,22 +1,15 @@
-function calculateGrade(mark) {
-    let result = " ";
-    if (mark >= 0 && mark <= 32) {
-        result = "F";
-    } else if (mark >= 33 && mark <= 39) {
-        result = "D";
-    } else if (mark >= 40 && mark <= 49) {
-        result = "C";
-    } else if (mark >= 50 && mark <= 59) {
-        result = "B";
-    } else if (mark >= 60 && mark <= 69) {
-        result = "A-"
-    } else if (mark >= 70 && mark <= 79) {
-        result = "A"
-    } else if (mark >= 80 && mark <= 100) {
-        result = "A+"
-    } else {
-        result = "Please input valid number not negative or more then 100";
-    }
-    return result
+//fist create empty array for our created new array finding max and min number
+// second we find max and min number in array using Math.max.apply() and Math.min.apply() builtin function 
+//third we push our new element in empty array using push() method;
+function minMax(arr) {
+    let newArr = [];
+    let min = Math.min.apply(null, arr);
+    let max = Math.max.apply(null, arr);
+
+    newArr.push(min);
+    newArr.push(max);
+    
+    return newArr;
 }
-console.log(calculateGrade());
+
+console.log(minMax([1, 2, 3, 4, 5]));
