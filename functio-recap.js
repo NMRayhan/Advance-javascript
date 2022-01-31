@@ -1,15 +1,25 @@
-//fist create empty array for our created new array finding max and min number
-// second we find max and min number in array using Math.max.apply() and Math.min.apply() builtin function 
-//third we push our new element in empty array using push() method;
-function minMax(arr) {
-    let newArr = [];
-    let min = Math.min.apply(null, arr);
-    let max = Math.max.apply(null, arr);
-
-    newArr.push(min);
-    newArr.push(max);
-    
-    return newArr;
+function points(twoPointers, threePointers) {
+    let result = (twoPointers * 2) + (threePointers * 3);
+    return result;
 }
 
-console.log(minMax([1, 2, 3, 4, 5]));
+console.log(points(1, 1));
+
+console.log(points(7, 5));
+
+console.log(points(38, 8));
+
+function dec2bin(dec1, dec2) {
+    let first = (dec1 >>> 0).toString(2);
+    let second = (dec2 >>> 0).toString(2);
+
+    return first & second;
+}
+
+console.log(dec2bin(6,23));
+
+function bin2dec(bin) {
+    return parseInt(bin, 2).toString(10);
+}
+
+console.log(bin2dec(111));
