@@ -1,25 +1,9 @@
-function points(twoPointers, threePointers) {
-    let result = (twoPointers * 2) + (threePointers * 3);
-    return result;
+function birthDate(dayOfWeek, day, month, year) {
+    var daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+    return daysOfWeek[dayOfWeek] + 'day,' + day + ' ' + months[month] + ' ' + year;
 }
 
-console.log(points(1, 1));
-
-console.log(points(7, 5));
-
-console.log(points(38, 8));
-
-function dec2bin(dec1, dec2) {
-    let first = (dec1 >>> 0).toString(2);
-    let second = (dec2 >>> 0).toString(2);
-
-    return first & second;
-}
-
-console.log(dec2bin(6,23));
-
-function bin2dec(bin) {
-    return parseInt(bin, 2).toString(10);
-}
-
-console.log(bin2dec(111));
+var date1 = new Date(2000, 0, 1);
+console.log("Foo was Born on: " + birthDate(date1.getDay(), date1.getDate(), date1.getMonth(), date1.getFullYear()));
