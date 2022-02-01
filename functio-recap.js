@@ -1,12 +1,13 @@
-// nth = (n-1)th + (n-2)th
+let names = ['hablu', 'dablu', 'bablu', 'hablu', 'kablu', 'mablu', 'hablu', 'dablu', 'kablu']
 
-
-function fibonacci(number) {
-    let fibo = [0, 1];
-    for (let i = 2; i <= number; i++) {
-        fibo[i] = fibo[i - 1] + fibo[i - 2];
+function DoubleFinder(names) {
+    let unique = [];
+    for (const element of names) {
+        if (unique.indexOf(element) == -1) {
+            unique.push(element);
+        }
     }
-    return fibo;
+    return unique;
 }
 
-console.log(fibonacci(15));
+console.log(DoubleFinder(names));
