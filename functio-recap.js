@@ -1,14 +1,12 @@
-function LargesElement(Numbers) {
-    let largest = Numbers[0];
-    for (let count = 0; count < Numbers.length; count++) {
-        const element = Numbers[count];
-        if (element > largest) {
-            largest = element;
-        }
+// nth = (n-1)th + (n-2)th
+
+
+function fibonacci(number) {
+    let fibo = [0, 1];
+    for (let i = 2; i <= number; i++) {
+        fibo[i] = fibo[i - 1] + fibo[i - 2];
     }
-    return largest;
+    return fibo;
 }
 
-// console.log(LargesElement([-2,-4,-10,-65,-5]));
-let largestArray = [10, 22, 3, 41, 5, 21, 6, 32, 45, 42, 45, 65, 63, 43, 5]
-console.log(LargesElement(largestArray));
+console.log(fibonacci(15));
