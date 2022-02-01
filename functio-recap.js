@@ -1,13 +1,10 @@
-let names = ['hablu', 'dablu', 'bablu', 'hablu', 'kablu', 'mablu', 'hablu', 'dablu', 'kablu']
+let greeting = "Hello How Are You?"
 
-function DoubleFinder(names) {
-    let unique = [];
-    for (const element of names) {
-        if (unique.indexOf(element) == -1) {
-            unique.push(element);
-        }
+function reverseString(text) {
+    let reverseText = '';
+    for (let character of text) {
+        reverseText = character + reverseText;
     }
-    return unique;
+    return reverseText;
 }
-
-console.log(DoubleFinder(names));
+console.log(reverseString(greeting));
